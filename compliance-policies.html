@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMDIQ - Compliance Policies</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/windows-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <script src="assets/scripts.js" defer></script>
+</head>
+<body>
+  <div class="cmdiq-app-window">
+    <div class="cmdiq-app-header">
+      <div class="cmdiq-app-title">Compliance Policies</div>
+      <div class="cmdiq-app-controls">
+        <button class="win-btn minimize" title="Minimize"></button>
+        <button class="win-btn maximize" title="Maximize"></button>
+        <button class="win-btn close" title="Close"></button>
+        <button id="theme-toggle" class="win-btn" title="Toggle Theme">🌓</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <nav class="nav-sidebar" role="navigation" aria-label="Sidebar Navigation">
+        <h2>CMDIQ</h2>
+        <a href="devices.html" class="nav-item" aria-label="Devices">🖥️ Devices</a>
+        <a href="compliance-policies.html" class="nav-item" aria-label="Compliance">📋 Compliance</a>
+        <a href="scripts.html" class="nav-item" aria-label="Scripts">💻 Scripts</a>
+        <a href="mac-enrollments.html" class="nav-item" aria-label="Mac Enrollment">🍏 Mac Enrollment</a>
+        <a href="patch-management.html" class="nav-item" aria-label="Patching">🩹 Patching</a>
+        <a href="remote-commands.html" class="nav-item" aria-label="Remote">🎯 Remote</a>
+        <a href="dashboards.html" class="nav-item" aria-label="Dashboard">📈 Dashboard</a>
+        <a href="investigations.html" class="nav-item" aria-label="Investigations">🕵️ Investigations</a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle Theme">🌓 Toggle Theme</button>
+      </nav>
+      <main class="main-content">
+        <h2>Compliance Policies Overview</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Policy Name</th>
+              <th>Platform</th>
+              <th>Compliance Status</th>
+              <th>Last Evaluation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Windows Baseline Policy</td>
+              <td>Windows 10/11</td>
+              <td>Compliant</td>
+              <td>2025-04-27</td>
+            </tr>
+            <tr>
+              <td>Mobile Device Encryption</td>
+              <td>iOS/Android</td>
+              <td>Non-Compliant</td>
+              <td>2025-04-26</td>
+            </tr>
+            <tr>
+              <td>MacOS Security Standards</td>
+              <td>macOS</td>
+              <td>Compliant</td>
+              <td>2025-04-25</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <div class="cmdiq-app-footer">
+      <button class="primary-btn">Refresh Policies</button>
+      <button class="secondary-btn">Close</button>
+    </div>
+  </div>
+  <div id="modal" class="win-modal" style="display:none;">
+    <div class="win-modal-content">
+      <span id="modal-message"></span>
+      <button id="modal-close" class="fluent-button">OK</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modalClose = document.getElementById('modal-close');
+      if (modalClose) {
+        modalClose.addEventListener('click', function () {
+          document.getElementById('modal').style.display = 'none';
+        });
+      }
+      var themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-theme');
+          this.textContent = document.body.classList.contains('dark-theme') ? '🌞 Toggle Theme' : '🌓 Toggle Theme';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

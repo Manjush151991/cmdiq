@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMDIQ Desktop</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2563eb">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/windows-style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <script src="assets/scripts.js" defer></script>
+</head>
+
+<body>
+  <div id="desktop">
+    <img src="assets/CMDIQ.png" alt="CMDIQ Logo" id="logo" />
+    <div class="desktop-icons" role="navigation" aria-label="Desktop Applications">
+      <div class="desktop-icon" data-app="devices" tabindex="0" aria-label="Open Devices">
+        <img src="assets/icons/devices.png" alt="Devices" />
+        <span>Devices</span>
+      </div>
+      <div class="desktop-icon" data-app="compliance" tabindex="0" aria-label="Open Compliance">
+        <img src="assets/icons/compliance.png" alt="Compliance" />
+        <span>Compliance</span>
+      </div>
+      <div class="desktop-icon" data-app="scripts" tabindex="0" aria-label="Open Scripts">
+        <img src="assets/icons/scripts.png" alt="Scripts" />
+        <span>Scripts</span>
+      </div>
+      <div class="desktop-icon" data-app="mac-enrollment" tabindex="0" aria-label="Open Mac Enrollment">
+        <img src="assets/icons/macenrollment.png" alt="Mac Enrollment" />
+        <span>Mac Enrollment</span>
+      </div>
+      <div class="desktop-icon" data-app="patching" tabindex="0" aria-label="Open Patching">
+        <img src="assets/icons/patching.png" alt="Patching" />
+        <span>Patching</span>
+      </div>
+      <div class="desktop-icon" data-app="remote" tabindex="0" aria-label="Open Remote">
+        <img src="assets/icons/remote.png" alt="Remote" />
+        <span>Remote</span>
+      </div>
+      <div class="desktop-icon" data-app="dashboard" tabindex="0" aria-label="Open Dashboard">
+        <img src="assets/icons/dashboard.png" alt="Dashboard" />
+        <span>Dashboard</span>
+      </div>
+      <div class="desktop-icon" data-app="investigations" tabindex="0" aria-label="Open Investigations">
+        <img src="assets/icons/investigations.png" alt="Investigations" />
+        <span>Investigations</span>
+      </div>
+    </div>
+  </div>
+  <div id="taskbar" role="toolbar" aria-label="Taskbar">
+    <button id="start-button" aria-label="Open Start Menu">Start</button>
+    <div id="taskbar-apps"></div>
+    <div id="taskbar-clock" aria-label="Clock"></div>
+  </div>
+  <div id="start-menu" class="hidden" role="menu" aria-label="Start Menu">
+    <ul>
+      <li data-app="devices">Devices</li>
+      <li data-app="compliance">Compliance</li>
+      <li data-app="scripts">Scripts</li>
+      <li data-app="mac-enrollment">Mac Enrollment</li>
+      <li data-app="patching">Patching</li>
+      <li data-app="remote">Remote</li>
+      <li data-app="dashboard">Dashboard</li>
+      <li data-app="investigations">Investigations</li>
+    </ul>
+  </div>
+</body>
+
+</html>

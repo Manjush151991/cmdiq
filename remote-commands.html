@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎯 Remote Commands - CMDIQ</title>
+  <meta name="description" content="Execute remote actions securely on selected endpoints.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2563eb">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/windows-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <meta property="og:title" content="🎯 Remote Commands | CMDIQ">
+  <meta property="og:description" content="Execute remote actions securely on selected endpoints.">
+</head>
+
+<body>
+  <div class="cmdiq-app-window" aria-label="Remote Commands App Window">
+    <div class="cmdiq-app-header" aria-label="Remote Commands App Header">
+      <div class="cmdiq-app-title">Remote Commands</div>
+      <div class="cmdiq-app-controls">
+        <button class="win-btn minimize" title="Minimize"></button>
+        <button class="win-btn maximize" title="Maximize"></button>
+        <button class="win-btn close" title="Close"></button>
+        <button id="theme-toggle" class="win-btn" title="Toggle Theme">🌓</button>
+      </div>
+    </div>
+    <main class="cmdiq-app-body" id="main-content">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+      <nav class="nav-sidebar" role="navigation" aria-label="Sidebar Navigation">
+        <h2>CMDIQ</h2>
+        <a href="devices.html" class="nav-item" aria-label="Devices">🖥️ Devices</a>
+        <a href="compliance-policies.html" class="nav-item" aria-label="Compliance">📋 Compliance</a>
+        <a href="scripts.html" class="nav-item" aria-label="Scripts">💻 Scripts</a>
+        <a href="mac-enrollments.html" class="nav-item" aria-label="Mac Enrollment">🍏 Mac Enrollment</a>
+        <a href="patch-management.html" class="nav-item" aria-label="Patching">🩹 Patching</a>
+        <a href="remote-commands.html" class="nav-item" aria-label="Remote">🎯 Remote</a>
+        <a href="dashboards.html" class="nav-item" aria-label="Dashboard">📈 Dashboard</a>
+        <a href="investigations.html" class="nav-item" aria-label="Investigations">🕵️ Investigations</a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle Theme">🌓 Toggle Theme</button>
+      </nav>
+
+      <h1>🎯 Remote Commands</h1>
+      <div class="metric-card">
+        <h2>🎯 Overview</h2>
+        <p>Execute remote actions securely on selected endpoints.</p>
+        <button class="fluent-button" onclick="alert('Feature coming soon!')">Explore</button>
+      </div>
+      <h2>Remote Control</h2>
+      <div class="remote-actions">
+        <button class="fluent-button">Restart Device</button>
+        <button class="fluent-button">Lock Screen</button>
+        <button class="fluent-button">Send Message</button>
+      </div>
+      <div class="remote-log">
+        <strong>Recent Actions</strong>
+        <ul>
+          <li>Device 1: Restarted (2 min ago)</li>
+          <li>Device 2: Locked (10 min ago)</li>
+        </ul>
+      </div>
+    </main>
+    <div class="cmdiq-app-footer">
+      <button class="primary-btn">Send Command</button>
+      <button class="secondary-btn">Close</button>
+    </div>
+  </div>
+  <div id="modal" class="win-modal" style="display:none;">
+    <div class="win-modal-content">
+      <span id="modal-message"></span>
+      <button id="modal-close" class="fluent-button">OK</button>
+    </div>
+  </div>
+  <script src="assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modalClose = document.getElementById('modal-close');
+      if (modalClose) {
+        modalClose.addEventListener('click', function () {
+          document.getElementById('modal').style.display = 'none';
+        });
+      }
+      var themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-theme');
+          this.textContent = document.body.classList.contains('dark-theme') ? '🌞 Toggle Theme' : '🌓 Toggle Theme';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

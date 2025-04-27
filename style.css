@@ -1,0 +1,171 @@
+.devices-list {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.device-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 220px;
+}
+
+.device-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.status-online {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.status-offline {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.compliance-list {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.compliance-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 1.2rem 1.5rem;
+    min-width: 220px;
+    position: relative;
+}
+
+.compliance-status {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 0.95rem;
+    padding: 2px 10px;
+    border-radius: 6px;
+}
+
+.compliance-status.compliant {
+    background: #e6fbe8;
+    color: #16a34a;
+}
+
+.compliance-status.noncompliant {
+    background: #fde8e8;
+    color: #dc2626;
+}
+
+.remote-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.remote-log {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+}
+
+.remote-log ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.cmdiq-notification {
+    position: fixed;
+    right: 32px;
+    bottom: 64px;
+    min-width: 220px;
+    background: #fff;
+    color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(31, 38, 135, 0.18);
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.cmdiq-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cmdiq-notification.success {
+    border-left: 6px solid #16a34a;
+}
+
+.cmdiq-notification.info {
+    border-left: 6px solid #2563eb;
+}
+
+.cmdiq-notification.error {
+    border-left: 6px solid #dc2626;
+}
+
+.cmdiq-boot-animation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #162032;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.cmdiq-boot-animation.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.boot-logo img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 24px #2563eb88);
+}
+
+.boot-spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #2563eb33;
+    border-top: 5px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.2rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.boot-text {
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

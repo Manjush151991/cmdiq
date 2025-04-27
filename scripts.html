@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMDIQ - Script Automation</title>
+
+  <!-- Link to your assets/style.css correctly -->
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/windows-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="cmdiq-app-window" aria-label="Scripts App Window">
+    <div class="cmdiq-app-header" aria-label="Scripts App Header">
+      <div class="cmdiq-app-title">Scripts</div>
+      <div class="cmdiq-app-controls">
+        <button class="win-btn minimize" title="Minimize"></button>
+        <button class="win-btn maximize" title="Maximize"></button>
+        <button class="win-btn close" title="Close"></button>
+        <button id="theme-toggle" class="win-btn" title="Toggle Theme">🌓</button>
+      </div>
+    </div>
+    <main class="cmdiq-app-body" id="main-content">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <nav class="nav-sidebar" role="navigation" aria-label="Sidebar Navigation">
+        <h2>CMDIQ</h2>
+        <a href="devices.html" class="nav-item" aria-label="Devices">🖥️ Devices</a>
+        <a href="compliance-policies.html" class="nav-item" aria-label="Compliance">📋 Compliance</a>
+        <a href="scripts.html" class="nav-item" aria-label="Scripts">💻 Scripts</a>
+        <a href="mac-enrollments.html" class="nav-item" aria-label="Mac Enrollment">🍏 Mac Enrollment</a>
+        <a href="patch-management.html" class="nav-item" aria-label="Patching">🩹 Patching</a>
+        <a href="remote-commands.html" class="nav-item" aria-label="Remote">🎯 Remote</a>
+        <a href="dashboards.html" class="nav-item" aria-label="Dashboard">📈 Dashboard</a>
+        <a href="investigations.html" class="nav-item" aria-label="Investigations">🕵️ Investigations</a>
+        <button id="theme-toggle" class="nav-item" aria-label="Toggle Theme">🌓 Toggle Theme</button>
+      </nav>
+
+      <h1>💻 Script Automation</h1>
+
+      <!-- Overview Card -->
+      <div class="metric-card">
+        <h2>💻 Overview</h2>
+        <p>Create, test and run automation scripts across devices.</p>
+        <button class="fluent-button" onclick="alert('Feature coming soon!')">Explore</button>
+      </div>
+
+      <!-- Upload Script Form -->
+      <div class="metric-card">
+        <h2>📤 Upload a Script</h2>
+        <form id="uploadForm">
+          <label for="scriptFile">Choose a script file (.ps1, .sh, .py):</label><br>
+          <input type="file" id="scriptFile" name="scriptFile" accept=".ps1,.sh,.py" required>
+          <p id="fileError" style="color: red; display: none;">❌ Only .ps1, .sh, or .py files allowed.</p>
+
+          <div class="form-group">
+            <label for="scriptDescription">Description (optional):</label><br>
+            <textarea id="scriptDescription" rows="3" placeholder="Describe your script..."></textarea>
+          </div>
+
+          <div id="loadingSpinner" class="loading-spinner" hidden></div>
+
+          <button type="submit" class="fluent-button">🚀 Upload Script</button>
+
+          <div id="uploadResult" class="result-message" style="margin-top: 1rem;"></div>
+        </form>
+      </div>
+
+      <!-- Uploaded Scripts Section -->
+      <div class="metric-card script-list">
+        <h2>📝 Uploaded Scripts</h2>
+        <div id="scriptContainer"></div>
+      </div>
+
+      <!-- Template for Uploaded Script -->
+      <template id="scriptTemplate">
+        <div class="script-item">
+          <div class="script-title" style="font-weight: bold;"></div>
+          <div class="script-description" style="margin-top: 0.5rem;"></div>
+          <time class="script-date" style="font-size: 0.8rem; color: var(--text-muted);"></time>
+          <div class="script-actions" style="margin-top: 1rem;">
+            <button class="fluent-button btn-small" data-action="delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </template>
+    </main>
+    <div class="cmdiq-app-footer">
+      <button class="primary-btn">Upload Script</button>
+      <button class="secondary-btn">Close</button>
+    </div>
+  </div>
+  <div id="modal" class="win-modal" style="display:none;">
+    <div class="win-modal-content">
+      <span id="modal-message"></span>
+      <button id="modal-close" class="fluent-button">OK</button>
+    </div>
+  </div>
+
+  <!-- Link to your assets/scripts.js correctly -->
+  <script src="assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modalClose = document.getElementById('modal-close');
+      if (modalClose) {
+        modalClose.addEventListener('click', function () {
+          document.getElementById('modal').style.display = 'none';
+        });
+      }
+      var themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-theme');
+          this.textContent = document.body.classList.contains('dark-theme') ? '🌞 Toggle Theme' : '🌓 Toggle Theme';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

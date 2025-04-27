@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Laptop-001",
+    "os": "Windows 11 Pro",
+    "status": "Compliant",
+    "user": "Alice"
+  },
+  {
+    "id": "Mobile-123",
+    "os": "iOS 17",
+    "status": "Non-Compliant",
+    "user": "Bob"
+  },
+  {
+    "id": "Desktop-789",
+    "os": "Windows 10",
+    "status": "Compliant",
+    "user": "Charlie"
+  }
+]

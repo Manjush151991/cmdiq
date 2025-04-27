@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMDIQ - Devices</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2563eb">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/windows-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+  <script src="assets/scripts.js" defer></script>
+</head>
+
+<body>
+  <div class="cmdiq-app-window" aria-label="Devices App Window">
+    <div class="cmdiq-app-header" aria-label="Devices App Header">
+      <div class="cmdiq-app-title">Devices</div>
+      <div class="cmdiq-app-controls">
+        <button class="win-btn minimize" title="Minimize"></button>
+        <button class="win-btn maximize" title="Maximize"></button>
+        <button class="win-btn close" title="Close"></button>
+        <button id="theme-toggle" class="win-btn" title="Toggle Theme">🌓</button>
+      </div>
+    </div>
+    <main class="cmdiq-app-body" id="main-content">
+      <h2>Device Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Device Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">OS</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop-001</td>
+            <td>Laptop</td>
+            <td>Windows 11 Pro</td>
+            <td>Compliant</td>
+          </tr>
+          <tr>
+            <td>Mobile-123</td>
+            <td>Smartphone</td>
+            <td>iOS 17</td>
+            <td>Non-Compliant</td>
+          </tr>
+          <tr>
+            <td>Desktop-789</td>
+            <td>Desktop</td>
+            <td>Windows 10</td>
+            <td>Compliant</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <div class="cmdiq-app-footer">
+      <button class="primary-btn">Sync Devices</button>
+      <button class="secondary-btn">Close</button>
+    </div>
+  </div>
+  <div id="modal" class="win-modal" style="display:none;">
+    <div class="win-modal-content">
+      <span id="modal-message"></span>
+      <button id="modal-close" class="fluent-button">OK</button>
+    </div>
+  </div>
+</body>
+
+</html>

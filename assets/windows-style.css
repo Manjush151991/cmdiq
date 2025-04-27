@@ -1,0 +1,192 @@
+/* windows-style.css - Windows/Fluent UI look */
+.window {
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: #f3f3f3;
+    border: 1px solid #d1d5db;
+    overflow: hidden;
+}
+
+.window-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #e5e9f2 0%, #c7d0e1 100%);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #d1d5db;
+    height: 40px;
+}
+
+.window-title {
+    font-weight: 600;
+    color: #2563eb;
+    font-size: 1.1rem;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.win-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    background: #e5e9f2;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.win-btn.minimize::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #555;
+    position: absolute;
+    left: 7px;
+    top: 13px;
+}
+
+.win-btn.maximize::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #555;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    border-radius: 2px;
+}
+
+.win-btn.close {
+    background: #e57373;
+}
+
+.win-btn.close::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 7px;
+    top: 13px;
+    transform: rotate(45deg);
+}
+
+.win-btn.close::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 7px;
+    top: 13px;
+    transform: rotate(-45deg);
+}
+
+.window-content {
+    display: flex;
+}
+
+.nav-sidebar {
+    background: #e5e9f2;
+    border-right: 1px solid #d1d5db;
+    min-width: 220px;
+    padding: 1rem 0.5rem;
+    height: calc(100vh - 40px);
+}
+
+.main-content {
+    background: #f3f3f3;
+    padding: 2rem;
+    flex: 1;
+    min-height: 80vh;
+}
+
+.fluent-button,
+.btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s;
+}
+
+.fluent-button:hover,
+.btn:hover {
+    background: #1749b1;
+}
+
+.metric-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Modal */
+.win-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.win-modal-content {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    min-width: 320px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #0078d4;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 900px) {
+    .window {
+        max-width: 100vw;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}
