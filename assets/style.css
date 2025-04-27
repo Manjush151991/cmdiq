@@ -9,7 +9,7 @@ html {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url('assets/CMDIQ.png') center center no-repeat, linear-gradient(120deg, #162032 0%, #22304a 100%);
+    background: linear-gradient(120deg, #162032 0%, #22304a 100%), url('assets/CMDIQ.png') center center no-repeat;
     background-size: 420px, cover;
     overflow: hidden;
 }
@@ -272,6 +272,7 @@ html {
     background: #e57373;
     color: #fff;
 }
+
 .cmdiq-app-controls .window-close:hover {
     background: #c62828;
 }
@@ -308,6 +309,7 @@ html {
     background: #2563eb;
     color: #fff;
 }
+
 .primary-btn:hover {
     background: #1749b1;
 }
@@ -316,6 +318,7 @@ html {
     background: #e5e9f2;
     color: #222;
 }
+
 .secondary-btn:hover {
     background: #cbd5e1;
 }
@@ -325,51 +328,67 @@ body.dark-theme .cmdiq-app-window {
     background: #232b3b;
     border-color: #334155;
 }
+
 body.dark-theme .cmdiq-app-header {
     background: #1e293b;
     color: #fff;
     border-bottom: 1px solid #334155;
 }
+
 body.dark-theme .cmdiq-app-title {
     color: #90cdf4;
 }
+
 body.dark-theme .cmdiq-app-controls button {
     background: #334155;
     color: #fff;
     margin-left: 8px;
 }
+
 body.dark-theme .cmdiq-app-controls .window-close {
     background: #b91c1c;
 }
+
 body.dark-theme .cmdiq-app-controls .window-close:hover {
     background: #7f1d1d;
 }
+
 body.dark-theme .cmdiq-app-body {
     background: #232b3b;
     color: #e0eafc;
 }
+
 body.dark-theme .cmdiq-app-footer {
     background: #1e293b;
     border-top: 1px solid #334155;
     gap: 10px;
 }
+
 body.dark-theme .primary-btn {
     background: #2563eb;
     color: #fff;
 }
+
 body.dark-theme .primary-btn:hover {
     background: #1749b1;
 }
+
 body.dark-theme .secondary-btn {
     background: #334155;
     color: #e0eafc;
 }
+
 body.dark-theme .secondary-btn:hover {
     background: #475569;
 }
 
-table th, table td {
+table th,
+table td {
     padding: 12px;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 700px) {
@@ -377,6 +396,7 @@ table th, table td {
         max-width: 100vw;
         margin: 0.5rem;
     }
+
     .cmdiq-app-body,
     .cmdiq-app-footer {
         padding: 1rem;

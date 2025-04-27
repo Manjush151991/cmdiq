@@ -633,22 +633,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Start menu logic
-  const startBtn = document.querySelector('.start-btn');
+  const startBtn = document.getElementById('start-button');
   const startMenu = document.getElementById('start-menu');
   if (startBtn && startMenu) {
     startBtn.onclick = () => {
-      startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
+      startMenu.classList.toggle('hidden');
     };
     document.addEventListener('click', e => {
       if (!startMenu.contains(e.target) && e.target !== startBtn) {
-        startMenu.style.display = 'none';
+        startMenu.classList.add('hidden');
       }
     });
-    startMenu.querySelectorAll('a[data-app]').forEach(link => {
+    startMenu.querySelectorAll('li[data-app]').forEach(link => {
       link.onclick = (e) => {
         e.preventDefault();
         createWindow(link.getAttribute('data-app'));
-        startMenu.style.display = 'none';
+        startMenu.classList.add('hidden');
       };
     });
   }

@@ -40,6 +40,12 @@ Visit http://localhost:8000
   pip install -r requirements.txt
   ```
 
+## Deployment to GitHub Pages
+1. Push your code to the `main` branch of your GitHub repository.
+2. Go to the repository settings and enable GitHub Pages.
+3. Set the source to the `main` branch and save.
+4. Your site will be available at `https://<username>.github.io/<repository-name>/`.
+
 ## Notes
 - For production, set `debug=False` in app.py
 - The frontend expects the API to be available at the same host/port or configure CORS as needed.
