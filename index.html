@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <div id="desktop">
+  <div class="desktop" id="desktop">
     <img src="assets/CMDIQ.png" alt="CMDIQ Logo" id="logo" />
     <div class="desktop-icons" role="navigation" aria-label="Desktop Applications">
       <div class="desktop-icon" data-app="devices" tabindex="0" aria-label="Open Devices">
@@ -56,23 +56,27 @@
         <span>Investigations</span>
       </div>
     </div>
+    <div class="windows-area"></div>
   </div>
-  <div id="taskbar" role="toolbar" aria-label="Taskbar">
-    <button id="start-button" aria-label="Open Start Menu">Start</button>
-    <div id="taskbar-apps"></div>
-    <div id="taskbar-clock" aria-label="Clock"></div>
+  <div class="taskbar" id="taskbar" role="toolbar" aria-label="Taskbar">
+    <button id="start-button" class="start-btn" aria-label="Open Start Menu">Start</button>
+    <div id="taskbar-apps" class="taskbar-apps"></div>
+    <div id="taskbar-clock" class="taskbar-clock" aria-label="Clock"></div>
   </div>
-  <div id="start-menu" class="hidden" role="menu" aria-label="Start Menu">
-    <ul>
-      <li data-app="devices">Devices</li>
-      <li data-app="compliance">Compliance</li>
-      <li data-app="scripts">Scripts</li>
-      <li data-app="mac-enrollment">Mac Enrollment</li>
-      <li data-app="patching">Patching</li>
-      <li data-app="remote">Remote</li>
-      <li data-app="dashboard">Dashboard</li>
-      <li data-app="investigations">Investigations</li>
-    </ul>
+  <div id="start-menu" class="start-menu hidden" role="menu" aria-label="Start Menu">
+    <div class="start-menu-content">
+      <h3>Applications</h3>
+      <ul>
+        <li data-app="devices">Devices</li>
+        <li data-app="compliance">Compliance</li>
+        <li data-app="scripts">Scripts</li>
+        <li data-app="mac-enrollment">Mac Enrollment</li>
+        <li data-app="patching">Patching</li>
+        <li data-app="remote">Remote</li>
+        <li data-app="dashboard">Dashboard</li>
+        <li data-app="investigations">Investigations</li>
+      </ul>
+    </div>
   </div>
 </body>
 

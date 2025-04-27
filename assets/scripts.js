@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) body.classList.add(savedTheme);
 
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-    localStorage.setItem('theme',
-      body.classList.contains('dark-theme') ? 'dark-theme' : ''
-    );
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      localStorage.setItem('theme',
+        body.classList.contains('dark-theme') ? 'dark-theme' : ''
+      );
+    });
+  }
 
   // Upload Form Elements
   const form = document.getElementById('uploadForm');
@@ -627,29 +629,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Desktop icon click
-  Array.from(document.querySelectorAll('.desktop-icon')).forEach(icon => {
-    icon.onclick = () => createWindow(icon.getAttribute('data-app'));
+  // Desktop icon click handlers
+  document.querySelectorAll('.desktop-icon').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const appName = icon.getAttribute('data-app');
+      createWindow(appName);
+    });
   });
 
-  // Start menu logic
+  // Start menu click handlers
   const startBtn = document.getElementById('start-button');
   const startMenu = document.getElementById('start-menu');
   if (startBtn && startMenu) {
-    startBtn.onclick = () => {
+    startBtn.addEventListener('click', () => {
       startMenu.classList.toggle('hidden');
-    };
-    document.addEventListener('click', e => {
+    });
+
+    document.addEventListener('click', (e) => {
       if (!startMenu.contains(e.target) && e.target !== startBtn) {
         startMenu.classList.add('hidden');
       }
     });
+
     startMenu.querySelectorAll('li[data-app]').forEach(link => {
-      link.onclick = (e) => {
-        e.preventDefault();
-        createWindow(link.getAttribute('data-app'));
+      link.addEventListener('click', () => {
+        const appName = link.getAttribute('data-app');
+        createWindow(appName);
         startMenu.classList.add('hidden');
-      };
+      });
     });
   }
 
