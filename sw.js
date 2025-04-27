@@ -24,7 +24,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderHistory();
-});

@@ -185,8 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  setupWindowControls();
-
   // --- Boot Animation ---
   function showBootAnimation() {
     const boot = document.createElement('div');
